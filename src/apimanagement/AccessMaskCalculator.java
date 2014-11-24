@@ -5,67 +5,59 @@ import java.util.ArrayList;
 public class AccessMaskCalculator {
     public static final AccessMask ACCOUNTBALANCE=new AccessMask(1,"AccountBalance");
     public static final AccessMask ASSETLIST=new AccessMask(2,"AssetList");
-    public static final AccessMask CALENDAREVENTATTENDEES=new AccessMask(4,"CalendarEventAttendees");
-    public static final AccessMask CHARACTERSHEET=new AccessMask(8,"CharacterSheet");
+    public static final AccessMask MEMBERMEDALS=new AccessMask(4,"MemberMedals");
+    public static final AccessMask CORPORATIONSHEET=new AccessMask(8,"CorpSheet");
     public static final AccessMask CONTACTLIST=new AccessMask(16,"ContactList");
-    public static final AccessMask CONTACTNOTIFICATIONS=new AccessMask(32,"ContactNotifications");
+    public static final AccessMask CONTAINERLOG=new AccessMask(32,"ContainerLog");
     public static final AccessMask FACWARSTATS=new AccessMask(64,"FacWarStats");
     public static final AccessMask INDUSTRYJOBS=new AccessMask(128,"IndustryJobs");
     public static final AccessMask KILLLOG=new AccessMask(256,"KillLog");
-    public static final AccessMask MAILBODIES=new AccessMask(512,"MailBodies");
-    public static final AccessMask MAILINGLISTS=new AccessMask(1024,"MailingLists");
-    public static final AccessMask MAILMESSAGES=new AccessMask(2048,"MailMessages");
+    public static final AccessMask MEMBERSECURITY=new AccessMask(512,"MemberSecurity");
+    public static final AccessMask MEMBERSECURITYLOG=new AccessMask(1024,"MemberSecurityLog");
+    public static final AccessMask MEMBERTRACKING=new AccessMask(2048,"MemberTrackings");
     public static final AccessMask MARKETORDERS=new AccessMask(4096,"MarketOrders");
     public static final AccessMask MEDALS=new AccessMask(8192,"Medals");
-    public static final AccessMask NOTIFICATIONS=new AccessMask(16384,"Notifications");
-    public static final AccessMask NOTIFICATIONTEXTS=new AccessMask(32768,"NotificationTexts");
-    public static final AccessMask RESEARCH=new AccessMask(65536,"Research");
-    public static final AccessMask SKILLINTRAINING=new AccessMask(131072,"SkillInTraining");
-    public static final AccessMask SKILLQUEUE=new AccessMask(262144,"SkillQueue");
-    public static final AccessMask STANDINGS=new AccessMask(524288,"Standings");
-    public static final AccessMask UPCOMINGCALENDAREVENTS=new AccessMask(1048576,"UpcomingCalendarEvents");
-    public static final AccessMask WALLETJOURNAL=new AccessMask(2097152,"WalletJournal");
-    public static final AccessMask WALLETTRANSACTIONS=new AccessMask(4194304,"WalletTransactions");
-    public static final AccessMask CHARACTERINFOPUBLIC=new AccessMask(8388608,"CharacterInfoPublic");
-    public static final AccessMask CHARACTERINFOPRIVATE=new AccessMask(16777216,"CharacterInfoPrivate");
-    public static final AccessMask ACCOUNTSTATUS=new AccessMask(33554432,"AccountStatus");
-    public static final AccessMask CONTRACTS=new AccessMask(67108864,"Contracts");
-    public static final AccessMask LOCATIONS=new AccessMask(134217728,"Locations");
+    public static final AccessMask OUTPOSTLIST=new AccessMask(16384,"OutpostList");
+    public static final AccessMask OUTPOSTSERVICEDETAIL=new AccessMask(32768,"OutpostServiceDetail");
+    public static final AccessMask SHAREHOLDERS=new AccessMask(65536,"ShareHolders");
+    public static final AccessMask STARBASEDETAIL=new AccessMask(131072,"StarbaseDetail");
+    public static final AccessMask STANDINGS=new AccessMask(262144,"Standings");
+    public static final AccessMask STARBASELIST=new AccessMask(524288,"StarbaseList");
+    public static final AccessMask WALLETJOURNAL=new AccessMask(1048576,"WalletJournal");
+    public static final AccessMask WALLETTRANSACTIONS=new AccessMask(2097152,"WalletTransactions");
+    public static final AccessMask TITLES=new AccessMask(4194304,"Titles");
+    public static final AccessMask LOCATIONS=new AccessMask(16777216,"Locations");
             
-    private ArrayList<AccessMask> maskMap = new ArrayList<AccessMask>();
+    private ArrayList<AccessMask> corpMaskMap = new ArrayList<AccessMask>();
     
     public AccessMaskCalculator(){
-    	maskMap.add(ACCOUNTBALANCE);
-        maskMap.add(ASSETLIST);
-        maskMap.add(CALENDAREVENTATTENDEES);
-        maskMap.add(CHARACTERSHEET);
-        maskMap.add(CONTACTLIST);
-        maskMap.add(CONTACTNOTIFICATIONS);
-        maskMap.add(FACWARSTATS);
-        maskMap.add(INDUSTRYJOBS);
-        maskMap.add(KILLLOG);
-        maskMap.add(MAILBODIES);
-        maskMap.add(MAILINGLISTS);
-        maskMap.add(MAILMESSAGES);
-        maskMap.add(MARKETORDERS);
-        maskMap.add(NOTIFICATIONS);
-        maskMap.add(MEDALS);
-        maskMap.add(NOTIFICATIONTEXTS);
-        maskMap.add(RESEARCH);
-        maskMap.add(SKILLINTRAINING);
-        maskMap.add(SKILLQUEUE);
-        maskMap.add(STANDINGS);
-        maskMap.add(UPCOMINGCALENDAREVENTS);
-        maskMap.add(WALLETJOURNAL);
-        maskMap.add(WALLETTRANSACTIONS);
-        maskMap.add(CHARACTERINFOPUBLIC);
-        maskMap.add(CHARACTERINFOPRIVATE);
-        maskMap.add(ACCOUNTSTATUS);
-        maskMap.add(CONTRACTS);
-        maskMap.add(LOCATIONS);
+    	corpMaskMap.add(ACCOUNTBALANCE);
+        corpMaskMap.add(ASSETLIST);
+        corpMaskMap.add(MEMBERMEDALS);
+        corpMaskMap.add(CORPORATIONSHEET);
+        corpMaskMap.add(CONTACTLIST);
+        corpMaskMap.add(CONTAINERLOG);
+        corpMaskMap.add(FACWARSTATS);
+        corpMaskMap.add(INDUSTRYJOBS);
+        corpMaskMap.add(KILLLOG);
+        corpMaskMap.add(MEMBERSECURITY);
+        corpMaskMap.add(MEMBERSECURITYLOG);
+        corpMaskMap.add(MEMBERTRACKING);
+        corpMaskMap.add(MARKETORDERS);
+        corpMaskMap.add(MEDALS);
+        corpMaskMap.add(OUTPOSTLIST);
+        corpMaskMap.add(OUTPOSTSERVICEDETAIL);  
+        corpMaskMap.add(SHAREHOLDERS);
+        corpMaskMap.add(STARBASEDETAIL);
+        corpMaskMap.add(STARBASELIST);
+        corpMaskMap.add(STANDINGS);
+        corpMaskMap.add(WALLETJOURNAL);
+        corpMaskMap.add(WALLETTRANSACTIONS);
+        corpMaskMap.add(TITLES);
+        corpMaskMap.add(LOCATIONS);
     }
     public ArrayList<AccessMask> getAllMasks(){
-        return maskMap;
+        return corpMaskMap;
     }
     
     /**
@@ -79,6 +71,21 @@ public class AccessMaskCalculator {
     	if((mask & keyMask)!=0){
     		return true;
     	}else return false;
+    }
+    
+    /**
+     * Sends an array of AccessMasks to be confirmed at confirmAccess()
+     * @param maskList
+     * @param keyMask
+     * @return false if any AccessMask is not confirmed, true otherwise
+     */
+    public boolean confirmAll(ArrayList<AccessMask> maskList, int keyMask){
+    	for(AccessMask mask:maskList){
+    		if(confirmAccess(mask,keyMask)){
+    			continue;
+    		}else return false;
+    	}
+    	return true;
     }
     
     /**
